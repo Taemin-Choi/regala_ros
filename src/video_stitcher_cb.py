@@ -36,8 +36,8 @@ class VideoStitcher(object):
         self.fitted_left_corners = np.zeros(shape=((self.cb_row * self.cb_col), 1, 2))
 
         # Time Sync Subscriber
-        left_image_sub = Subscriber('/left_camera/image_raw', Image)
-        right_image_sub = Subscriber('/right_camera/image_raw', Image)
+        left_image_sub = Subscriber('/calibrated_left_image_raw', Image)
+        right_image_sub = Subscriber('/calibrated_right_image_raw', Image)
         
         time_sync = ApproximateTimeSynchronizer([left_image_sub, right_image_sub], queue_size=10, slop=0.5)
         time_sync.registerCallback(self.callback)
@@ -137,6 +137,6 @@ class VideoStitcher(object):
 
 if __name__ == '__main__':
     print("main")
-    rospy.init_node('video_stitcher', anonymous=False)
+    rospy.init_node('video_stitcher2', anonymous=False)
     video_stitcher = VideoStitcher()
     rospy.spin()

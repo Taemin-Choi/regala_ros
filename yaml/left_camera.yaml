@@ -4,8 +4,8 @@ camera_name: left_camera
 camera_matrix:
   rows: 3
   cols: 3
-  data: [611.154981, 0, 959.5, 0, 611.154981, 539.5, 0, 0, 1]
-distortion_model: ""
+  data: [611.1549814728781, 0, 959.5, 0, 611.1549814728781, 539.5, 0, 0, 1]
+distortion_model: equidistant
 distortion_coefficients:
   rows: 1
   cols: 4
@@ -17,4 +17,4 @@ rectification_matrix:
 projection_matrix:
   rows: 3
   cols: 4
-  data: [611.154981, 0, 959.5, 0, 0, 611.154981, 539.5, 0, 0, 0, 1, 0]
+  data: [611.1549814728781, 0, 959.5, 0, 0, 611.1549814728781, 539.5, 0, 0, 0, 1, 0]
