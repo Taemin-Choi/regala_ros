@@ -20,8 +20,8 @@ class VideoStitcher(object):
         width = rospy.get_param('~width', 1920)
 
         # CB(Chessboard) size
-        self.cb_row = rospy.get_param('~cb_row', 5)
-        self.cb_col = rospy.get_param('~cb_row', 4)
+        self.cb_row = rospy.get_param('~cb_row', 9)
+        self.cb_col = rospy.get_param('~cb_row', 6)
         self.cb_blank = rospy.get_param('cb_blank', 2)
         
         # ROS-OpenCV Bridge
@@ -29,6 +29,20 @@ class VideoStitcher(object):
 
         # Transformation Matrix
         self.saved_homo_matrix = None
+
+        K = np.array([[1061.6669474755668, 0.0, 1092.295708244102], [0.0, 1062.9746618789036, 480.1234977885109], [0.0, 0.0, 1.0]])
+        D = np.array([[0.0], [0.0], [0.0], [0.0]])
+
+        map1, map2 = cv2.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, (1920, 1080), cv2.CV_32FC1)
+
+        self.map1 = map1
+        self.map2 = map2
+
+        print("+++++++++++++++++++++++++")
+        print(self.map1)
+        print("+++++++++++++++++++++++++")
+        print(self.map2)
+        print("+++++++++++++++++++++++++")
 
         self.fitted_left_corners = np.zeros(shape=((self.cb_row * self.cb_col), 1, 2))
 
@@ -49,19 +63,33 @@ class VideoStitcher(object):
         self.predicted_left_corners = np.zeros(shape=(corners_shape))
         self.right_corners = np.zeros(shape=(corners_shape))
 
-
     def callback(self, left, right):
         try:
             cv_left_image = self.bridge.imgmsg_to_cv2(left, "bgr8")
             cv_right_image = self.bridge.imgmsg_to_cv2(right, "bgr8")
 
-            K=np.array([[1061.6669474755668, 0.0, 1092.295708244102], [0.0, 1062.9746618789036, 480.1234977885109], [0.0, 0.0, 1.0]])
-            D=np.array([[0.0], [0.0], [0.0], [0.0]])
 
-            map1, map2 = cv2.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, (1920, 1080), cv2.CV_16SC2)
+            # print("map1 : {}".format(map1))
+            # print("map2 : {}".format(map2))
 
-            cv_left_image = cv2.remap(cv_left_image, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
-            cv_right_image = cv2.remap(cv_right_image, map1, map2, interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+            # Knew = K.copy()
+            # Knew[(0,1),(0,1)] = Knew[(0,1),(0,1)]
+
+            cv_left_image = cv2.remap(cv_left_image, (self.map1), (self.map2), interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
+            # cv_left_image = cv2.fisheye.undistortImage(cv_left_image, K, D=D, Knew=Knew)
+            
+            # map1 = map1 - 300
+            # bordersize = 200
+            # cv_right_image = cv2.copyMakeBorder(cv_right_image,
+            #                                     top=bordersize,
+            #                                     bottom=bordersize,
+            #                                     left=bordersize,
+            #                                     right=bordersize,
+            #                                     borderType=cv2.BORDER_CONSTANT,
+            #                                     value=[255, 255, 255])
+            # map2 = map2 - 300
+            
+            cv_right_image = cv2.remap(cv_right_image, (self.map1), (self.map2), interpolation=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT)
 
 
             # mono fisheye calibration...
@@ -150,6 +178,6 @@ class VideoStitcher(object):
 
 if __name__ == '__main__':
     print("main")
-    rospy.init_node('video_stitcher', anonymous=False)
+    rospy.init_node('calibration', anonymous=False)
     video_stitcher = VideoStitcher()
     rospy.spin()

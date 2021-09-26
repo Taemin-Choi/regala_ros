@@ -23,8 +23,8 @@ class VideoStitcher(object):
         width = rospy.get_param('~width', 1920)
 
         # CB(Chessboard) size
-        self.cb_row = rospy.get_param('~cb_row', 5)
-        self.cb_col = rospy.get_param('~cb_row', 4)
+        self.cb_row = rospy.get_param('~cb_row', 9)
+        self.cb_col = rospy.get_param('~cb_row', 6)
         self.cb_blank = rospy.get_param('cb_blank', 2)
         
         # ROS-OpenCV Bridge
@@ -36,6 +36,9 @@ class VideoStitcher(object):
         self.fitted_left_corners = np.zeros(shape=((self.cb_row * self.cb_col), 1, 2))
 
         # Time Sync Subscriber
+        # left_image_sub = Subscriber('/left_camera/image_raw', Image)
+        # right_image_sub = Subscriber('/right_camera/image_raw', Image)
+
         left_image_sub = Subscriber('/calibrated_left_image_raw', Image)
         right_image_sub = Subscriber('/calibrated_right_image_raw', Image)
         
