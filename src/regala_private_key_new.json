@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "lateral-medium-329915",
+  "private_key_id": "6804a6e3be4810164997cc5ecb3a2f3e8a2b903c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdN32VoR9C942B\nEHYvq20QKA6W3Eru0sTRk5gUeyXK9JF9iNFAZw6RBngmmE3wb2LltKR/QRB8OvJY\nSu9lm5wUGtdR2xjZrTvFPh/VTPVl6rfN8HPCmjENCB/NEWuS1HCbmVBP+muxMyyR\nhj5tXN1+84j6tFPMsWdWOyjnBqQxPyt9xHw2xSS/ND1TVnMttQA7Y7A/+snpw6W0\n4NceOTYXV5VtCCgjQsZlQ1a4+3PWUJXEagHhSQvnZA15B6onz0nEGKk6e2c7rpLL\nK/LwBKbVNRknh3EOaGatyvnOoXVDlEnjRD8Hcl4Ipfx04wxeI8i5UetPFT+E0e3Q\nbPdpnW17AgMBAAECggEAGaRQTlROJfz8Tl2h+RprmmP+JSre6d7kjQ4WktiXDGgh\nRqlG/8sPPCYi+KCErb9tEOwKnFq/VpPCrRXjv93Gch0Cm24xumcfxYbhaEe6Cppi\nyir6pnXBpE976FV8ByGxEB/MUo8Ue31OOpn7mpi345nS8JjyxgL1SMIzZKLXqtRS\nPGy20ZNbWOR7c8eeBp2jreUSt1GTSWmuTuVstHmS1n45NdY/5t2xRiLuOnJdR/6r\nIn395G3ltCuE09KhPrgJAiZERaXhkuabmLvMh4e908lFebjvJxGbUntmpCBnSbX4\nPoHr9zgTfXb0rakLO9IDNTKDDD6IHY3yM8wRKLbbgQKBgQDS7P0Zo3Fy8YxctfaD\n2mNDpNVWZvIkSD8ngtxOXsKNwSBGLLCddIiBlDE/ut8fyO2PUIxk0P/z6C35NII1\n4lQeWxQ3GufSEEgrDBeDmyofw+1T1YzSL5F5QDC4fS8gPcGcJtM3jTTzgBkd+jBp\n22+UvK3K8plbVARcOlvYUPuIwQKBgQC+0EVnQ0IkIkxz2ihmWcUSdaGFKefMGDzd\nmQhNySgSEuQ8EOkE97yKa0dkuY1OalyB+2s4RcVFQrJUwaX5+aAPErgt6ow/rHxC\ncsQf7gfIxfSolJ8imDeaiRqHEkoupv/TQQxCxiLQmEAtnmnm0ZzgD8KDTdARBc/B\nA1f3WD4pOwKBgQCJbGSe7rE8zYnA4cFCOOhRqzRf/eSnpPaYvJbi7LRffUOU1Qsh\nG0rQ+gd4WT2ETPoSVM2T5ePNOymw4vgvOU3LFVY/bOU7JOaQPWmYkmDIn3OiGlGM\no/dpA1x65vzsSbA6F8WnvPWR7JTwxhAC+DhjtOaagqNOMJhCqrcqYeDwQQKBgFDr\noFM/icArL4L+JJ3rOhEvA5WmhN/f84gCiyv5v92SV2pFvZxWt4V4I2nK6uszXhHd\nnsXZiORreZdKHGpbe46I4MTQMDQcoQHJC/WCi5iQosYPaUFRjlsiA7b+gakxN1LO\nxjVXM5KEzsrJ4J17jWzUIihvCmr9rPJsyZRivtHbAoGAL0iHLp8dv8SlacoI30/1\ndPp48VNTaGCAYHvOfDNohqKd50Ch341uWstQSnt0HWE2gCEegz45xriTgrPTELh7\nLARlhRhc3fJefTxCWjLtMhgFnqvbBnTEKUffnvVlcUPVMrRy+IVvUXhalbtszEb+\nkYgVagKfswZsAm3+97tZC7o=\n-----END PRIVATE KEY-----\n",
+  "client_email": "regala-new@lateral-medium-329915.iam.gserviceaccount.com",
+  "client_id": "108868687675397929242",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/regala-new%40lateral-medium-329915.iam.gserviceaccount.com"
+}
