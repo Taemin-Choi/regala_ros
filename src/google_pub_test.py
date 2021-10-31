@@ -1,11 +1,11 @@
 import os
 from google.cloud import pubsub_v1
 
-credentials_path = './regala_private_key_new.json'
+credentials_path = './regala_new.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 
 publisher = pubsub_v1.PublisherClient()
-topic_path = 'projects/lateral-medium-329915/topics/regala'
+topic_path = 'projects/project-regala/topics/recording-cue'
 
 data = 'Test Message'
 data = data.encode('utf-8')

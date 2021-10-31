@@ -10,11 +10,12 @@ from subprocess import Popen, PIPE, STDOUT
 
 # call('rosrun turtlesim turtlesim_node')
 
-cmd = ['rosrun', 'turtlesim', 'turtlesim_node']
+# cmd = ['rosrun', 'turtlesim', 'turtlesim_node']
+cmd = ['rosrun', 'image_view', 'video_recorder', image:='right_camera/image_raw']
 proc = Popen(cmd, preexec_fn=os.setsid)
 # proc = Popen(cmd, shell=True, preexec_fn=os.setsid)
 
-time.sleep(1)
+time.sleep(10)
 print("kill")
 cmd = ['rosnode', 'kill', '/turtlesim']
 # cmd = 'rosnode kill /turtlesim'

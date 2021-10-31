@@ -2,13 +2,13 @@ import os
 from google.cloud import pubsub_v1
 from concurrent.futures import TimeoutError
 
-credentials_path = './regala_private_key_new.json'
+credentials_path = './regala_new.json'
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credentials_path
 
 timeout = 5.0
 
 subscriber = pubsub_v1.SubscriberClient()
-subscription_path = 'projects/lateral-medium-329915/subscriptions/regala-sub'
+subscription_path = 'projects/project-regala/subscriptions/recording-cue-sub'
 
 def callback(message):
     print('Received message : {}'.format(message))
